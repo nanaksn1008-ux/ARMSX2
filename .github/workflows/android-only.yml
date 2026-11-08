@@ -36,8 +36,7 @@ jobs:
         run: rustup target add aarch64-linux-android
 
       - name: Build release APK
-        run: ./gradlew :app:assembleRelease --stacktrace
-
+        run: ./gradlew :app:assemblePlayRelease -Parmsx2.applicationId=com.budokai3.game "-Parmsx2.appLabel=DBZ Budokai 3" --stacktrace
       - name: Upload APK
         uses: actions/upload-artifact@v7
         with:
